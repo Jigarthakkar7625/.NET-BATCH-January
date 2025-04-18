@@ -10,7 +10,7 @@ export class UserComponent implements OnInit {
   firstName: string = "Jigar";
   lastName: any = [];
   id = "txtId";
-  isAvtive = false;
+  isAvtive = true;
 
   constructor() { }
 
@@ -29,13 +29,14 @@ export class UserComponent implements OnInit {
 
   onSaveClick() {
     debugger
-    alert(1);
+    console.log(this.firstName);
+    // alert(1);
   }
 
-  onMouseenter() {
-    debugger
-    alert("onMouseenter ENTER");
-  }
+  // onMouseenter() {
+  //   debugger
+  //   alert("onMouseenter ENTER");
+  // }
 
 }
 

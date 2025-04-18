@@ -4,14 +4,21 @@
 
 <h1>This is User Component</h1>
 
-<input type="text" [id]="id" class="" style=""  [disabled]="isAvtive" [value]="firstName">
+<input type="text" [(ngModel)]="firstName">
 
 <br>
 <br>
 
+<input type="checkbox" name="" id="" [(ngModel)]="isAvtive">
 
-<button (click)="onSaveClick()" [id]="" (mouseenter)="onMouseenter()"> Save</button>
+
+<button (click)="onSaveClick()" [id]="" > Save</button>
+<!-- (mouseenter)="onMouseenter()" -->
 
 
 [] >> Attribute binding
 () >> Event
+
+
+<!-- //1 : @input(), @output()
+//2 : Services -->

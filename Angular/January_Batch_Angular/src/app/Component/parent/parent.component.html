@@ -1,0 +1,13 @@
+<p>parent works!</p>
+Parent component : {{parentProperty}}
+
+<br>
+<br>
+
+<input type="text" id="txtDate" #txtDate>
+
+
+<app-child [childInputProperty]="parentProperty" (passDataToParent)="getDataFromChild($event)"></app-child>
+
+<!-- //Parent > CHild >> Attribute []
+// Child to Parent >> Event () -->
