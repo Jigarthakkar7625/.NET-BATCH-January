@@ -1,0 +1,11 @@
+<div class="header">
+    <a href="#default" class="logo">CompanyLogo</a>
+    <div class="header-right">
+        <a routerLinkActive="active" (click)="GotoLogin()">Login page</a>
+        
+        <a routerLinkActive="active" [routerLink]="['/parent']">Parent page</a>
+        <a routerLinkActive="active"  [routerLink]="['/child']">Child Page</a>
+        <a routerLinkActive="active" [routerLink]="['/register']">register Page</a>
+        <!-- <a [routerLink]="['/category']">About</a> -->
+    </div>
+</div>

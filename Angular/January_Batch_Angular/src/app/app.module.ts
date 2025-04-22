@@ -7,13 +7,21 @@ import { UserComponent } from './Component/user/user.component';
 import { FormsModule } from '@angular/forms';
 import { ParentComponent } from './Component/parent/parent.component';
 import { ChildComponent } from './Component/child/child.component';
+import { RegisterComponent } from './Component/register/register.component';
+import { LoginComponent } from './Component/login/login.component';
+import { HeaderComponent } from './Component/header/header.component';
+import { NotFoundComponent } from './Component/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    RegisterComponent,
+    LoginComponent,
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

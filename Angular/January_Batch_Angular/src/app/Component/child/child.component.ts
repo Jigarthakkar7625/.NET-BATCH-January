@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,14 +7,26 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
+
   @Input() childInputProperty: any;
   @Input() childInputProperty11: any;
   @Output() passDataToParent = new EventEmitter<any>(); // Pass data child to parent
+  @Output() passDataToParent1 = new EventEmitter<any>(); // Pass data child to parent
 
   constructor() { }
 
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   debugger
+  //   console.log("CALLED ngOnChanges" + changes);
+  // }
+
   ngOnInit(): void {
+   // console.log("CALLED ngOnInit")
   }
+
+  // ngDoCheck(){
+  //   console.log("CALLED ngDoCheck")
+  // }
 
   PassDataToParentComp() {
     debugger
@@ -39,6 +51,11 @@ export class ChildComponent implements OnInit {
     ]
 
 
-    this.passDataToParent.emit(list);
+    this.passDataToParent.emit(this.childInputProperty);
+  }
+
+  ngOnDestroy(){
+    debugger
+    console.log("called ngOnDestroy")
   }
 }
