@@ -6,6 +6,7 @@ import { ParentComponent } from './Component/parent/parent.component';
 import { ChildComponent } from './Component/child/child.component';
 import { NotFoundComponent } from './Component/not-found/not-found.component';
 import { UserComponent } from './Component/user/user.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -27,12 +28,17 @@ const routes: Routes = [
     path: "child", component: ChildComponent
   },
   {
-    path: "user", component: UserComponent
+    path: "user", component: UserComponent, canActivate: [AuthGuardService], data:{
+      role:"Admin, HR" //>> Only Admin, HR
+    }
   },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {
     path: "**", component: NotFoundComponent
   },
+  {
+    path: "NotFound", component: NotFoundComponent
+  }
 ];
 
 @NgModule({
