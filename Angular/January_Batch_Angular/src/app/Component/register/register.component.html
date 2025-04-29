@@ -1,3 +1,55 @@
 <p>register works!</p>
 
 <h1>This is register page</h1>
+
+
+<form [formGroup]="form">
+
+    User Name : <input type="text" formControlName="userName">
+    <br>
+
+    <div *ngIf="isSubmit && form.get('userName')?.errors" style="color: red;">
+        <div *ngIf="form.get('userName')?.errors?.['required']" style="color: red;">
+            Please enter User Name
+        </div>
+    </div>
+    <br>   <br>
+    
+    Email : <input type="text" formControlName="email">
+    <br>
+
+    <div *ngIf="isSubmit &&  form.get('email')?.errors" style="color: red;">
+        <div *ngIf="form.get('email')?.errors?.['required']" style="color: red;">
+            Please enter Email
+        </div>
+
+        <div *ngIf="form.get('email')?.errors?.['email']" style="color: red;">
+            Please enter Valid Email
+        </div>
+    </div>
+
+    password : <input type="text" formControlName="password">
+    <br>
+
+    <br>
+    <div *ngIf="isSubmit &&  form.get('password')?.errors" style="color: red;">
+        <div *ngIf="form.get('password')?.errors?.['required']" style="color: red;">
+            Please enter password
+        </div>
+
+        <div *ngIf="form.get('password')?.errors?.['maxlength']" style="color: red;">
+            Please enter Valid password
+        </div>
+
+        <div *ngIf="form.get('password')?.errors?.['minlength']" style="color: red;">
+            Please enter Valid password
+        </div>
+    </div>
+    <!-- <div *ngIf="form.get("userName")?.errors">
+        Please enter User Name
+    </div> -->
+<br>
+<br>
+<br>
+    <button type="button" (click)="Save()">SAVE</button>
+</form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -12,9 +13,25 @@ export class UserComponent implements OnInit {
   id = "txtId";
   isAvtive = true;
 
-  constructor() { }
+  list: any = []
+
+  constructor(private _userService: UserService) { }
 
   ngOnInit(): void {
+    debugger
+    this._userService.GetUser().subscribe(
+      (res) => {
+        debugger
+        this.list = res;
+        localStorage.setItem("token", "sdfjkshfhsfjksdkfhdjskfdfsfsdfkkfds")
+        localStorage.getItem("token");
+        //this.people123 = res;
+      },
+      (error) => {
+      }
+    );
+
+    // Login > Token > 
 
     // const temp = 10;
     // temp  = 15;

@@ -5,6 +5,7 @@ import { RegisterComponent } from './Component/register/register.component';
 import { ParentComponent } from './Component/parent/parent.component';
 import { ChildComponent } from './Component/child/child.component';
 import { NotFoundComponent } from './Component/not-found/not-found.component';
+import { UserComponent } from './Component/user/user.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path: "child", component: ChildComponent
+  },
+  {
+    path: "user", component: UserComponent
   },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {

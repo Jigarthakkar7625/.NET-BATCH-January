@@ -20,5 +20,20 @@
 () >> Event
 
 
+<table id="customers">
+    <tr>
+        <th>Sr NO</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <tr *ngFor="let item of list; index as i">
+        <td> {{item.id}}</td>
+        <td> {{item.name}}</td>
+        <td> {{item.phone}}</td>
+    </tr>
+
+</table>
+
 <!-- //1 : @input(), @output()
 //2 : Services -->
+

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-@Component({
+@Component({ // Class decorator
   selector: 'app-parent', //Name
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
@@ -13,6 +13,7 @@ export class ParentComponent implements OnInit {
   money = 10;
   day = 10;
   UserList: any = []
+  color = 'red';
 
   constructor() {
     console.log("CALLED constructor")
@@ -20,8 +21,8 @@ export class ParentComponent implements OnInit {
 
   // Directived : 
   // Component directives
-  // Structure directives >> ngIf, ngfor, ngSwitch
-  // Attribute directives >> NgClass, NGStyle
+  // Structure directives >> ngIf, ngfor, ngSwitch >>layout
+  // Attribute directives >> NgClass, NGStyle >> HTML Control 
 
 
   ngOnInit(): void {

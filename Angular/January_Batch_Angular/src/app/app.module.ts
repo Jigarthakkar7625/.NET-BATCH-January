@@ -4,15 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './Component/user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './Component/parent/parent.component';
 import { ChildComponent } from './Component/child/child.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
 import { HeaderComponent } from './Component/header/header.component';
 import { NotFoundComponent } from './Component/not-found/not-found.component';
+import { MyDemoDirective } from './directives/my-demo.directive';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
-@NgModule({
+@NgModule({ // Class decorator
   declarations: [
     AppComponent,
     UserComponent,
@@ -21,14 +24,18 @@ import { NotFoundComponent } from './Component/not-found/not-found.component';
     RegisterComponent,
     LoginComponent,
     HeaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MyDemoDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, // NgModel
+    ReactiveFormsModule, // Form control >> Validation
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent] //Starting component (HTML)
 })
 export class AppModule { }

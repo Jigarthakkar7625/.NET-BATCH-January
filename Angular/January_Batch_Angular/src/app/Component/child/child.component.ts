@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 export class ChildComponent implements OnInit {
 
 
-  @Input() childInputProperty: any;
-  @Input() childInputProperty11: any;
+  @Input() childInputProperty: any; // Property Decorator
+  @Input() childInputProperty11: any; // Property Decorator
   @Output() passDataToParent = new EventEmitter<any>(); // Pass data child to parent
   @Output() passDataToParent1 = new EventEmitter<any>(); // Pass data child to parent
 

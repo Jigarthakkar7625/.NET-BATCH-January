@@ -4,21 +4,43 @@ Parent component : {{parentProperty}}
 <br>
 <br>
 
+
+<input type="text" id="txtDate" [ngClass]="{'active': isVisible, 'activeWidth': !isVisible}">
+<br>
+<br>
+<input type="text" id="txtDate1" [ngStyle]="{'background-color': color}">
+
+<br>
+<br>
+<input type="text" id="txtDate10" appMyDemo>
+<br>
+<br>
+<input type="text" id="txtDate11" appMyDemo>
+<br>
+<br>
+<input type="text" id="txtDate12" appMyDemo>
+<br>
+<br>
+<input type="text" id="txtDate13" appMyDemo>
+
+
 <!-- <input type="text" id="txtDate" #txtDate> -->
 <h1>FIRST</h1>
-<app-child [hidden]="!isVisible" [childInputProperty]="parentProperty" (passDataToParent)="getDataFromChild($event)"></app-child>
+<app-child [hidden]="!isVisible" [childInputProperty]="parentProperty"
+    (passDataToParent)="getDataFromChild($event)"></app-child>
 
 <br>
 
 
 <h1>2nd</h1>
-<app-child *ngIf="isVisible; else elsePartVisible" [childInputProperty]="parentProperty" (passDataToParent)="getDataFromChild($event)"></app-child>
+<app-child *ngIf="isVisible; else elsePartVisible" [childInputProperty]="parentProperty"
+    (passDataToParent)="getDataFromChild($event)"></app-child>
 
 
 <br>
 <br>
 <ng-template #elsePartVisible>
-   Else part
+    Else part
 </ng-template>
 
 <br>
@@ -39,18 +61,18 @@ Parent component : {{parentProperty}}
 <table id="customers">
     <tr>
         <th>Sr NO</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
     </tr>
     <tr *ngFor="let item of UserList; index as i">
         <td> {{i + 1}}</td>
-      <td> {{item.FirstName}}</td>
-      <td> {{item.LastName}}</td>
+        <td> {{item.FirstName}}</td>
+        <td> {{item.LastName}}</td>
     </tr>
-    
-  </table>
 
-  <div [ngSwitch]="day">
+</table>
+
+<div [ngSwitch]="day">
     <div *ngSwitchCase="1">
         MONDAY
     </div>
@@ -68,4 +90,4 @@ Parent component : {{parentProperty}}
         THIS IS DEFAULT
     </div>
 
-  </div>
+</div>
